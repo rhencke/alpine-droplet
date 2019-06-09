@@ -7,12 +7,15 @@ rc-update add sshd default
 cat > /etc/network/interfaces <<-EOF
 iface lo inet loopback
 iface eth0 inet dhcp
+iface eth1 inet dhcp
 EOF
 
 ln -s networking /etc/init.d/net.lo
 ln -s networking /etc/init.d/net.eth0
+ln -s networking /etc/init.d/net.eth1
 
 rc-update add net.eth0 default
+rc-update add net.eth1 default
 rc-update add net.lo boot
 
 # Create root ssh directory
