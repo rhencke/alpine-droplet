@@ -14,3 +14,4 @@ deploy:
   file: "*.bz2"
   on:
     repo: rhencke/alpine-droplet
+    tags: true
