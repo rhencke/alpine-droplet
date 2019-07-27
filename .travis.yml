@@ -10,7 +10,10 @@ script:
 - sudo ./build-3.10-image.sh
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key: ${GITHUB_API_TOKEN}
   file: "*.bz2"
+  file_glob: true
   on:
     repo: rhencke/alpine-droplet
+    tags: true
